@@ -1,0 +1,10 @@
+{
+    "name": "CFF. - Cat Files Feeder",
+    "version": "0.0.1",
+    "description": "This plugin allows to ingest all files with a specific extension from the `files` folder and optionally its subfolders by prompt.",
+    "author_name": "Gamma Software",
+    "author_url": "",
+    "plugin_url": "https://github.com/SviluppoGammapp/cat_files_feeder",
+    "tags": "prompt, memory, rag",
+    "thumb": "https://raw.githubusercontent.com/Furrmidable-Crew/cat_advanced_tools/main/logo.png"
+}
