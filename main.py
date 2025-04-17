@@ -56,11 +56,11 @@ class FileUploadForm(CatForm):
             return {
                 "output": f"Il percorso {dir_path} non esiste. Verifica che sia corretto o crealo prima di procedere."
             }      
-
+        
         if subfolders:
-            files = dir_path.rglob(f"*.{files_extension}")
+            files = list(dir_path.rglob(f"*.{files_extension}"))
         else:
-            files = dir_path.glob(f"*.{files_extension}")
+            files = list(dir_path.glob(f"*.{files_extension}"))       
 
         uploaded_files = []
         failed_files = []
@@ -86,7 +86,7 @@ class FileUploadForm(CatForm):
 
             # skip the file if is already in the rabbit_hole
             if str(file_full_name) in sources:
-                log.warnig(f"CFF - skipped file {step}/{tot_files}: {file_full_name} already present.")
+                log.warning(f"CFF - skipped file {step}/{tot_files}: {file_full_name} already present.")
                 failed_files.append(str(file_full_name))
                 self.cat.send_chat_message(f"skipped file {step}/{tot_files}{file_full_name} already present.")
                 continue
