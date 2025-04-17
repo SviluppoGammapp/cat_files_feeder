@@ -1,4 +1,3 @@
-
 import requests
 from cat.mad_hatter.decorators import hook
 from pydantic import BaseModel
@@ -56,18 +55,18 @@ class FileUploadForm(CatForm):
         if not os.path.exists(dir_path):
             return {
                 "output": f"Il percorso {dir_path} non esiste. Verifica che sia corretto o crealo prima di procedere."
-            }
-
-        uploaded_files = []
-        failed_files = []
-
-        tot_files = len(files)
-        step = 0
+            }      
 
         if subfolders:
             files = dir_path.rglob(f"*.{files_extension}")
         else:
             files = dir_path.glob(f"*.{files_extension}")
+
+        uploaded_files = []
+        failed_files = []
+        
+        tot_files = len(files)
+        step = 0
 
         # extracting filenames already present
         records, _ = self.cat.memory.vectors.declarative.get_all_points()
