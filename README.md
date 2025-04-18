@@ -10,7 +10,7 @@ It works with a `@form` that requires three parameters:
 - **subfolders**: if `true`, the tool will also search inside subfolders.
 - **files_extension**: specify a single file extension (e.g., `txt`, `java`, `md`).
 
-> 📝 All discovered files will be ingested as `text/plain`.
+> 📝 **All discovered files will be ingested as `text/plain`.**
 
 ---
 
