@@ -1,3 +1,5 @@
+<img src="logo.png" width="150">
+
 # 🐱 cat_files_feeder
 
 **cat_files_feeder** is a tool designed to automate the ingestion of files into declarative memory using a prompt-based interface.
